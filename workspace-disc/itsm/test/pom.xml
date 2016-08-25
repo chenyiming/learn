@@ -62,12 +62,18 @@
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
 		</dependency>
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>com.dubbo</groupId>
 			<artifactId>dubbo</artifactId>
 			<systemPath>${project.basedir}/../lib/dubbo-2.5.4.jar</systemPath>
 			<scope>system</scope>
+		</dependency> -->
+
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
 		</dependency>
+
 
 
 		<dependency>

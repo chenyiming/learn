@@ -23,7 +23,7 @@
     <dubbo:application name="ourfuture-consumer"/>
 
     <!-- <dubbo:registry id="internal" address="zookeeper://10.1.102.160:3181?backup=10.1.102.161:3181,10.1.102.162:3181"/> -->
-     <dubbo:registry  address="zookeeper://127.0.0.1:2181"/>
+     <dubbo:registry  address="zookeeper://192.168.13.123:2181"/>
 
 
     <dubbo:reference id="PersonDao" interface="com.future.dao.IPersonDao"  version="1.0.0"/>
