@@ -95,7 +95,7 @@
 		<module>test</module>
 		<module>web</module>
 		<module>dao</module>
-		<module>webside-dtgrid</module>
-		<module>redis</module>
+		<!--module>webside-dtgrid</module>
+		<module>redis</module-->
 	</modules>
 </project>
