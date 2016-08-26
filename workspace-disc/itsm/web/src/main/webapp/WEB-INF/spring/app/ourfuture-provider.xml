@@ -21,10 +21,15 @@
 	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <dubbo:application name="ourfuture-provider"/>
-
+	
+	<bean 
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:db.properties" />
+	</bean>
+	
     <!--娉ㄥ唽涓績娉ㄥ唽  涓�涓唴閮� 涓�涓閮� -->
     <!-- <dubbo:registry id="internal" address="zookeeper://10.1.102.160:3181?backup=10.1.102.161:3181,10.1.102.162:3181"/> -->
-    <dubbo:registry  address="zookeeper://192.168.13.123:2181"/>
+    <dubbo:registry  address="${zookeeper}"/>
 
     <!--鎺ュ彛瀹炵幇绫籦ean >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
    <bean id="PersonDao" class="com.future.dao.PersonDao">
