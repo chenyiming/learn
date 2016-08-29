@@ -110,5 +110,6 @@
 		<module>dao</module>
 		<!--module>webside-dtgrid</module>
 		<module>redis</module-->
+		<module>spider</module>
 	</modules>
 </project>
