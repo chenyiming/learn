@@ -52,7 +52,7 @@ public class SimpleTest {
 		ResultSet rs = null;
 		try {
 			Class.forName("org.teiid.jdbc.TeiidDriver");
-			String url = "jdbc:spider:abc@mm://192.168.13.166:31000";
+			String url = "jdbc:spider:testvdb@mm://192.168.13.203:31000";
 			String user = "user";
 			String pwd = "user";
 			conn = DriverManager.getConnection(url, user, pwd);
