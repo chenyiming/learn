@@ -86,7 +86,24 @@ public class SimpleTest {
 	
 	@Test
 	public void queryTest(){
+		long cr=System.currentTimeMillis();
+		System.out.println("----->"+cr);
 		spider.query();
+		System.out.println("----->"+(System.currentTimeMillis()-cr));
 	}
+	
+	
+	@Test
+	public void query2Test(){
+		long cr=System.currentTimeMillis();
+		System.out.println("----->"+cr);
+		spider.query2();
+		System.out.println("----->"+(System.currentTimeMillis()-cr));
+		spider.query2();
+		System.out.println("----->"+(System.currentTimeMillis()-cr));
+	}
+	
+	
+	
 
 }
