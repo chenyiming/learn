@@ -1,19 +1,21 @@
 package com.future.spider;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.annotation.Resource;
+
+import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class SpiderService {
 
-	@Autowired
-	org.apache.commons.dbcp.BasicDataSource dataSource;
+	//@Autowired
+	 @Resource(name="dataSourcespider") 
+	BasicDataSource dataSource;
 
 	public void query() {
 
