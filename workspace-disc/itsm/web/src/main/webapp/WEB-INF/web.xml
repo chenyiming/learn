@@ -25,7 +25,9 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-			classpath:spring/root-context.xml</param-value>
+			classpath:spring/root-context.xml,
+			classpath:spring/spider-context.xml
+			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>

@@ -11,16 +11,16 @@
 	<!-- Scans within the base package of the application for @Components to 
 		configure as beans -->
 		<!-- Scans within the base package of the application for @Components to configure as beans -->
-	<bean id="placeholderConfig"
+	<bean id="spiderConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:spider.properties" />
 	</bean>
 	<bean id="dataSourcespider" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
-		<property name="driverClassName" value="${db.driver}" />
-		<property name="url" value="${db.url}" />
-		<property name="username" value="${db.username}" />
-		<property name="password" value="${db.password}" />
+		<property name="driverClassName" value="${spider.driver}" />
+		<property name="url" value="${spider.url}" />
+		<property name="username" value="${spider.username}" />
+		<property name="password" value="${spider.password}" />
 	</bean>
 
 	<tx:annotation-driven />

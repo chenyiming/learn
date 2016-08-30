@@ -19,6 +19,20 @@
 			<artifactId>dao</artifactId>
 			<version>${project.version}</version>
 		</dependency>
+			<dependency>
+			<groupId>future</groupId>
+			<artifactId>spider</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.ourfuture</groupId>
+			<artifactId>spider-jdbc</artifactId>
+			<version>5.2.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/spider-5.2.0-jdbc.jar</systemPath>
+		</dependency> 
+		
 		<!-- Spring Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>

@@ -16,6 +16,7 @@ import com.future.controller.PersonController;
 import com.future.dao.IPersonDao;
 import com.future.model.Person;
 import com.future.shiro.entity.User;
+import com.future.spider.SpiderService;
 
 @RestController
 @RequestMapping("/rest/person/")
@@ -25,6 +26,9 @@ public class PersonRest {
 
 	@Autowired
 	private IPersonDao personDao;
+	
+	@Autowired
+	private SpiderService spider;
 
 	/*
 	 * @RequestMapping("/greeting") public Person greeting(
@@ -51,5 +55,12 @@ public class PersonRest {
 			person = personDao.find(id);
 		}
 		return person;
+	}
+	
+	
+	@RequestMapping("/spider")
+	public String spider() {
+		spider.query();
+		return "spider";
 	}
 }

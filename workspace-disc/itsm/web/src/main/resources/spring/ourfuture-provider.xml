@@ -22,7 +22,7 @@
 
     <dubbo:application name="ourfuture-provider"/>
 	
-	<bean 
+	<bean  id="dubboConfig"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:db.properties" />
 	</bean>
