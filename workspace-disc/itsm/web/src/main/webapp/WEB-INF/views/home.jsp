@@ -24,6 +24,7 @@
 </h1>
 ${controllerMessage}<br/>
 <br/>
+<a href=" rest/person/list">rest案例</a>
 <br/>
 <a href="person/list">Go to the person list</a>
 
