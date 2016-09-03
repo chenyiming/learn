@@ -1,104 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
-    http://www.springframework.org/schema/util 
-    http://www.springframework.org/schema/util/spring-util-3.0.xsd">
-	<description>Shiro 配置</description>
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!-- Realm实现 -->
+	<bean id="userRealm" class="com.shiro.cas.MyCasRealm">
+		<property name="defaultRoles" value="ROLE_USER"/>
+		<property name="defaultPermissions" value="user:create,user:update"/>
+		<property name="roleAttributeNames" value="roles"/>
+		<property name="permissionAttributeNames" value="permissions"/>
+		<property name="casServerUrlPrefix" value="http://192.168.9.89:8080/casClientMaven/main.jsp"/>
+		<property name="casService" value="http://192.168.13.123:8080/cas-server-web/login"/>
+	</bean>
+	    <!-- 会话ID生成器 -->
+    <bean id="sessionIdGenerator" class="org.apache.shiro.session.mgt.eis.JavaUuidSessionIdGenerator"/>
+
+    <!-- 会话Cookie模板 -->
+    <bean id="sessionIdCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+        <constructor-arg value="sid"/>
+        <property name="httpOnly" value="true"/>
+        <property name="maxAge" value="180000"/>
+    </bean>
+
+    <!-- 会话DAO -->
+    <bean id="sessionDAO" class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+        <property name="activeSessionsCacheName" value="shiro-activeSessionCache"/>
+        <property name="sessionIdGenerator" ref="sessionIdGenerator"/>
+    </bean>
+
+    <!-- 会话验证调度器 -->
+    <bean id="sessionValidationScheduler" class="org.apache.shiro.session.mgt.quartz.QuartzSessionValidationScheduler">
+        <property name="sessionValidationInterval" value="1800000"/>
+        <property name="sessionManager" ref="sessionManager"/>
+    </bean>
+
+    <!-- 会话管理器 -->
+    <bean id="sessionManager" class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+        <property name="globalSessionTimeout" value="1800000"/>
+        <property name="deleteInvalidSessions" value="true"/>
+        <property name="sessionValidationSchedulerEnabled" value="true"/>
+        <property name="sessionValidationScheduler" ref="sessionValidationScheduler"/>
+        <property name="sessionDAO" ref="sessionDAO"/>
+        <property name="sessionIdCookieEnabled" value="true"/>
+        <property name="sessionIdCookie" ref="sessionIdCookie"/>
+    </bean>
+	
+    <!-- 安全管理器 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="userRealm"/>
+	</bean>
+	
+    <!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+	<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+		<property name="arguments" ref="securityManager"/>
+	</bean>
+	<!-- 配置为基于表单认证的过滤器 -->
+	<bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter">
+	</bean>
+	
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
-		<property name="securityManager" ref="securityManager" />
-		<property name="loginUrl"
-			value="http://192.168.13.123:8080/cas-server-web/login?service=http://192.168.9.89:8080/casClientMaven/main.jsp" /><!-- 
+		<property name="securityManager" ref="securityManager"/>
+		<property name="loginUrl" value="http://192.168.13.123:8080/cas-server-web/login?service=http://192.168.9.89:8080/casClientMaven/main.jsp"/>
+		<!-- 
 			登录 CAS 服务端地址,服务端的返回地址 -->
 		<property name="filters">
 			<util:map>
 				<!-- 添加casFilter到shiroFilter -->
-				<entry key="casFilter" value-ref="casFilter" />
-				<entry key="authc" value-ref="formAuthenticationFilter" />
-				 <!--<entry key="authc" value-ref="captchaFormAuthenticationFilter" />--> 
-
+				<entry key="casFilter" value-ref="casFilter"/>
+				<entry key="authc" value-ref="formAuthenticationFilter"/>
+				<!--<entry key="authc" value-ref="captchaFormAuthenticationFilter" />-->
 			</util:map>
 		</property>
 		<property name="filterChainDefinitions">
 			<value>
 				<!-- Anon：不指定过滤器,这个过滤器是空的，什么都没做，跟没有一样。 Authc:验证，这些页面必须验证后才能访问，也就是我们说的登录后才能访问。 
 					.jsp*:后面的*代表 url的参数，比如 index.jsp?id=123 perms[SECURITY_ACCOUNT_VIEW] 表示用户需要提供值为“SECURITY_ACCOUNT_VIEW”Permission 
-					信息。 /login.do* = anon-->
-					
+					信息。 /login.do* = anon-->					
 				/main.jsp = casFilter
-                <!-- /** = roles[admin] -->
-                <!-- /** = anon -->
-				
-				<!-- /login.jsp* = anon
-				
-				/index.jsp*= anon
-				/error/noperms.jsp*= anon
-				/security/account/view.do=authc,perms[SECURITY_ACCOUNT_VIEW]
-				/login.do?main= casFilter-->
-				/** = authc
-				<!-- /login.do?main = authc  -->
+           		/** = authc
 			</value>
 		</property>
 	</bean>
-	<!-- <bean id="sessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager"></bean> -->
-
-	<!-- <bean id="formAuthenticationFilter" class="cn.javass.CustomFormAuthenticationFilter" 
-		/> -->
-
-	<bean
-		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<property name="staticMethod"
-			value="org.apache.shiro.SecurityUtils.setSecurityManager" />
-		<property name="arguments" ref="securityManager" />
-	</bean>
-
-	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
-		<property name="realm" ref="myShiroRealm" />
-		<!-- <property name="subjectFactory" ref="casSubjectFactory"/> -->
-	</bean>
-	<!-- 如果要实现cas的remember me的功能，需要用到下面这个bean，并设置到securityManager的subjectFactory中 -->
-	<!-- <bean id="casSubjectFactory" class="org.apache.shiro.cas.CasSubjectFactory"/> -->
-
-	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
-
-	<!-- CAS Realm 继承自CASRealm shiro权限控制器 <bean id="myShiroRealm" class="com.shiro.cas.MyCasRealm"> -->
-	<!-- <property name="cacheManager" ref="shiroCacheManager" /> -->
-	<!-- <property name="casServerUrlPrefix" value="http://sso.paas.com:8080/cas" 
-		/> <property name="casService" value="http://sso.paas.com:8080/shirodemo/login.do?main" 
-		/> </bean> -->
-
-	<bean id="myShiroRealm" class="com.shiro.cas.MyCasRealm">
-		  <property name="defaultRoles" value="ROLE_USER" /> <property name="defaultPermissions" 
-			value="user:create,user:update" /> <property name="roleAttributeNames" value="roles" 
-			/> <property name="permissionAttributeNames" value="permissions" />  
-		 <property name="casServerUrlPrefix" value="http://192.168.9.89:8080/casClientMaven/main.jsp" 
-			/> <property name="casService" value="http://192.168.13.123:8080/cas-server-web/login" 
-			/> 
-	</bean>
-
-	<!-- <bean id="shiroCacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager"> 
-		<property name="cacheManager" ref="cacheManager" /> </bean> -->
-	<!-- 配置为基于表单认证的过滤器 -->
-	<bean id="formAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter" />
-
-	<!-- <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean"> 
-		<property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/> 
-		<property name="arguments" ref="securityManager"/> </bean> -->
-
-	<!-- 认证登录的过滤器 -->
-	 <!--<bean id="captchaFormAuthenticationFilter" class="org.apache.shiro.web.filter.authc.FormAuthenticationFilter" 
-		/>  
-
-	--><!-- CAS Filter 校验失败跳转的页面 -->
+	<!-- CAS Filter 校验失败跳转的页面 -->
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
-		<property name="failureUrl" value="/index.jsp" />
+		<property name="failureUrl" value="/index.jsp"/>
 	</bean>
-	<!-- <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
-		depends-on="lifecycleBeanPostProcessor">
-		<property name="proxyTargetClass" value="true" />
-	</bean>
-	<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
-		<property name="securityManager" ref="securityManager" />
-	</bean> -->
+	
+    <!-- Shiro生命周期处理器-->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+	
+	
+	
 </beans>

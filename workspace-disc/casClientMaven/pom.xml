@@ -21,6 +21,12 @@
   
   	<dependencies>
   	
+  	
+  	
+  	
+  	
+  	
+  	
   		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -225,7 +231,15 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>future</groupId>
+			<artifactId>cas-client-future-1.0</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+						<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/cas-client-future-1.0.jar</systemPath>
+			
+		</dependency>
+  	</dependencies>
 	
 		<dependencyManagement>
 		<dependencies>
