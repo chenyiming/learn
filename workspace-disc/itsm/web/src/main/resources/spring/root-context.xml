@@ -12,5 +12,4 @@
 	<import resource="db.xml" />
 	<import resource="mvc/servlet-context.xml" />
 	<import resource="ourfuture-provider.xml" />
-	<import resource="spring-shiro-web.xml"/>
 </beans>

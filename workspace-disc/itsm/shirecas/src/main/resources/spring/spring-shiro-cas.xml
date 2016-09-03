@@ -93,7 +93,7 @@
 	</bean>
 	<!-- CAS Filter 校验失败跳转的页面 -->
 	<bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
-		<property name="failureUrl" value="/index.jsp"/>
+		<property name="failureUrl" value="/indexcas.jsp"/>
 	</bean>
 	
     <!-- Shiro生命周期处理器-->

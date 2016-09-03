@@ -32,6 +32,17 @@
 			<scope>system</scope>
 			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/spider-5.2.0-jdbc.jar</systemPath>
 		</dependency> 
+		<dependency>
+			<groupId>future</groupId>
+			<artifactId>shirecas</artifactId>
+			<version>${project.version}</version>
+			<!-- <scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/cas-client-future-1.0.jar</systemPath>			
+ -->		</dependency>
+		
+		
+		
+		
 		
 		<!-- Spring Dependencies -->
 		<dependency>
