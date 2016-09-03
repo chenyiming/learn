@@ -111,5 +111,6 @@
 		<!--module>webside-dtgrid</module>
 		<module>redis</module-->
 		<module>spider</module>
+		<module>shirecas</module>
 	</modules>
 </project>
