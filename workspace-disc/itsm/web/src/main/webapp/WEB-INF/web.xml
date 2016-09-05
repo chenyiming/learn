@@ -8,26 +8,41 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-
-
-
-
-
-
-
-	<!-- 
+ <!-- Spring ApplicationContext配置文件的路径,可使用通配符,多个路径用,号分隔 此参数用于后面的Spring Context Loader 
+  -->
+  	<!-- 
 	本地身份验证使用	classpath:spring/spring-shiro-web.xml,
 	cas身份验证使用 	classpath:spring/spring-shiro-cas.xml,
 	 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+          	classpath:spring/root-context.xml,
+			classpath:spring/spring-shiro-cas.xml,
+ 			classpath:spring/spider-context.xml
+ 			classpath:spring/dubbo-provider.xml
+        </param-value>
+    </context-param>
+
+    <!--Spring的ApplicationContext 载入 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <!-- Spring 刷新Introspector防止内存泄露 -->
+    <listener>
+        <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+    </listener>
+
+
+
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-			classpath:spring/root-context.xml,
-			classpath:spring/spring-shiro-cas.xml,
-			classpath:spring/spider-context.xml
+			classpath:spring/mvc/servlet-context.xml
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>

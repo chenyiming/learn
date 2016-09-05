@@ -10,6 +10,11 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 				
 	<import resource="db.xml" />
-	<import resource="mvc/servlet-context.xml" />
-	<import resource="ourfuture-provider.xml" />
+
+	<!-- 使用 annotation 自动注册 bean,并保证 @Required, @Autowired 的属性被注入 -->
+	<tx:annotation-driven />
+	<context:component-scan base-package="com.future.dao">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>	
+	</context:component-scan>
+
 </beans>

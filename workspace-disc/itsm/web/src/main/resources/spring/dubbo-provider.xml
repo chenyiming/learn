@@ -32,8 +32,8 @@
     <dubbo:registry  address="${zookeeper}"/>
 
     <!--鎺ュ彛瀹炵幇绫籦ean >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
-   <bean id="PersonDao" class="com.future.dao.PersonDao">
-    </bean> 
+<bean id="PersonDao" class="com.future.dao.PersonDao">
+    </bean>  
 
     
 
