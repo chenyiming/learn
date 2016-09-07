@@ -112,5 +112,6 @@
 		<module>redis</module-->
 		<module>spider</module>
 		<module>shirecas</module>
+		<module>elasticsearch</module>
 	</modules>
 </project>
