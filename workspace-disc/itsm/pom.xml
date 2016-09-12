@@ -103,7 +103,26 @@
 			<name>JBoss Repository</name>
 			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
 		</repository>
+		<repository>
+			<id>minerepo</id>
+			<name>Nexus Public Mirror</name>
+			<url>http://192.168.13.53:8181/nexus/content/groups/futuresoftware/</url>
+		</repository>
+		
 	</repositories>
+		<distributionManagement>
+		<repository>
+			<id>upload-releases</id>
+			<name>upload-releases</name>
+			<url>http://192.168.13.53:8181/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>upload-snapshots</id>
+			<name>upload-snapshots</name>
+			<url>http://192.168.13.53:8181/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
 	<modules>
 		<module>test</module>
 		<module>web</module>
