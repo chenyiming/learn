@@ -7,12 +7,32 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>redis</artifactId>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
 		</dependency>
-
+    <dependency>  
+        <groupId>redis.clients</groupId>  
+        <artifactId>jedis</artifactId>  
+    </dependency> 
 		
 	</dependencies>
+	<build>
+	<plugins>
+			<!-- Ensures we are compiling at 1.6 level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
