@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by chenke (mingxin) -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -115,3 +116,141 @@
 		<module>elasticsearch</module>
 	</modules>
 </project>
+=======
+<!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by chenke (mingxin) -->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>future</groupId>
+	<artifactId>itsm</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+		<org.apache.shiro.version>1.3.0</org.apache.shiro.version>
+		<dubbo.version>2.5.4-SNAPSHOT</dubbo.version>
+	</properties>
+	<dependencies>
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<!-- logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jcl-over-slf4j</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>com.sun.jdmk</groupId>
+					<artifactId>jmxtools</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>com.sun.jmx</groupId>
+					<artifactId>jmxri</artifactId>
+				</exclusion>
+			</exclusions>
+			<scope>runtime</scope>
+		</dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>2.0.7.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>dubbo</artifactId>
+				<version>2.5.3</version>
+				<scope>compile</scope>
+				<exclusions>
+					<exclusion>
+						<artifactId>spring</artifactId>
+						<groupId>org.springframework</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<repositories>
+		<repository>
+			<id>maven.aliyun.com</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+		<repository>
+			<id>org.springframework.maven.milestone</id>
+			<name>Spring Maven Milestone Repository</name>
+			<url>http://maven.springframework.org/milestone</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>repo1.maven.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</repository>
+		<!-- JBoss Repository used for Java EE 6 pieces -->
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+		</repository>
+		<repository>
+			<id>minerepo</id>
+			<name>Nexus Public Mirror</name>
+			<url>http://192.168.13.53:8181/nexus/content/groups/futuresoftware/</url>
+		</repository>
+		
+	</repositories>
+		<distributionManagement>
+		<repository>
+			<id>upload-releases</id>
+			<name>upload-releases</name>
+			<url>http://192.168.13.53:8181/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>upload-snapshots</id>
+			<name>upload-snapshots</name>
+			<url>http://192.168.13.53:8181/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+	<modules>
+		<module>test</module>
+		<module>web</module>
+		<module>dao</module>
+		<!--module>webside-dtgrid</module>
+		<module>redis</module-->
+		<module>spider</module>
+		<module>shirecas</module>
+		<module>elasticsearch</module>
+	</modules>
+</project>
+>>>>>>> 457edcd88832a50e8038e9391feb63cd44875fc4

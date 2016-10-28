@@ -18,8 +18,8 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
           	classpath:spring/root-context.xml,
-			classpath:spring/spring-shiro-cas.xml,
- 			classpath:spring/spider-context.xml
+			classpath:spring/spring-shiro-web.xml,
+ 			classpath:spring/spider-context.xml,
  			classpath:spring/dubbo-provider.xml
         </param-value>
     </context-param>
