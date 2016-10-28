@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!-- edited with XML Spy v4.2 U (http://www.xmlspy.com) by chenke (mingxin) -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -246,11 +245,9 @@
 		<module>test</module>
 		<module>web</module>
 		<module>dao</module>
-		<!--module>webside-dtgrid</module>
-		<module>redis</module-->
+		<module>redis</module>
 		<module>spider</module>
 		<module>shirecas</module>
 		<module>elasticsearch</module>
 	</modules>
 </project>
->>>>>>> 457edcd88832a50e8038e9391feb63cd44875fc4
