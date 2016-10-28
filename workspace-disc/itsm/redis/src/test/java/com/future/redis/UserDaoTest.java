@@ -1,16 +1,13 @@
 package com.future.redis;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import org.junit.runner.RunWith;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 
 @ContextConfiguration("/test-context.xml")
@@ -51,5 +48,34 @@ public class UserDaoTest {
 		userDao.delete(uid);
 		user = userDao.read(uid);
 		assertNull(user);
+	}
+	
+	
+	String uid = "u1234567";
+	@Test
+	public void testSave(){
+		// -------------- Create ---------------
+				
+				String address1 = "上海当调用borrow Object方法时，是否进行有效性检查当调"
+						+ "用borrow Object方法时，是否进行有效性检查当调用borrow Ob"
+						+ "ject方法时，是否进行有效性检查当调用borrow Object方法时，是否"
+						+ "进行有效性检查当调用borrow Object方法时，是否进行有效性检查当调用bo"
+						+ "rrow Object方法时，是否进行有效性检查当调用borrow Object方法时，是否进行"
+						+ "有效性检查当调用borrow Object方法时，是否进行有效性检查当调用borrow O"
+						+ "bject方法时，是否进行有效性检查当调用borrow Object方法时，是否进行有效性"
+						+ "检查当调用borrow Object方法时，是否进行有效性检查当调用borrow Object方法时，"
+						+ "是否进行有效性检查当调用borrow Object方法时，是否进行有效性检查当调用borrow"
+						+ " Object方法时"
+						+ "，是否进行有效性检查当调用borrow Object方法时，是否进行有效性检查";
+				User user = new User();
+				user.setAddress(address1);
+				user.setUid(uid);
+				userDao.save(user);
+	}
+	
+	@Test
+	public void testRead(){
+		User user = userDao.read(uid);
+		System.out.println(user.getAddress());
 	}
 }
