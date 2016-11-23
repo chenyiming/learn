@@ -13,12 +13,12 @@ import org.springframework.util.StringUtils;
 @Component
 public class PersonAop {
 
-	@Before("execution (* com.future.dao.PersonDao.save(..))")  
+	@Before("execution (* com.future.dao.*.save(..))")  
 	 public void beforeMethod(JoinPoint joinPoint){
 		 String methodName = joinPoint.getSignature().getName();
 	        Object [] args = joinPoint.getArgs();
 	        
-	        System.out.println("The method " + methodName + " begins with " + Arrays.asList(args));
+	        System.out.println("--->The method " + methodName + " begins with " + Arrays.asList(args));
 	}
 	
 	
