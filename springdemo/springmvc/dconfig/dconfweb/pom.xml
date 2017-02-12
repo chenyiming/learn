@@ -1,20 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>future</groupId>
-    <artifactId>dconf</artifactId>
-    <version>1.1.0-SNAPSHOT</version>
-  </parent>
-  <artifactId>dconfig</artifactId>
-  <packaging>war</packaging><name>dconfig</name><properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>future</groupId>
+		<artifactId>dconf</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>dconfweb</artifactId>
+	
+	<packaging>war</packaging>
+	
+	<properties>
 		<profiles.active>production</profiles.active>
 	</properties>
-  
-  
-  
-  <dependencies>
-  
-  <!-- provided Dependencies -->
+
+
+	<dependencies>
+
+		<!-- provided Dependencies -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -28,46 +31,22 @@
 			<version>2.2.1</version>
 		</dependency>
 		<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>jstl</artifactId>
-    <version>1.2</version>
-</dependency>
-		<!-- <dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-annotations</artifactId>
-			<version>${jetty.version}</version>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-webapp</artifactId>
-			<version>${jetty.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-server</artifactId>
-			<version>${jetty.version}</version>
-		</dependency>
-		<dependency>
-	      	<groupId>org.eclipse.jetty</groupId>
-	     	<artifactId>jetty-plus</artifactId>
-	      	<version>${jetty.version}</version>
-	    </dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>jetty-servlet</artifactId>
-			<version>${jetty.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>apache-jstl</artifactId>
-			<version>${jetty.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.eclipse.jetty</groupId>
-			<artifactId>apache-jsp</artifactId>
-			<version>${jetty.version}</version>
-		</dependency> -->
-	
+		<!-- <dependency> <groupId>org.eclipse.jetty</groupId> <artifactId>jetty-annotations</artifactId> 
+			<version>${jetty.version}</version> </dependency> <dependency> <groupId>org.eclipse.jetty</groupId> 
+			<artifactId>jetty-webapp</artifactId> <version>${jetty.version}</version> 
+			</dependency> <dependency> <groupId>org.eclipse.jetty</groupId> <artifactId>jetty-server</artifactId> 
+			<version>${jetty.version}</version> </dependency> <dependency> <groupId>org.eclipse.jetty</groupId> 
+			<artifactId>jetty-plus</artifactId> <version>${jetty.version}</version> </dependency> 
+			<dependency> <groupId>org.eclipse.jetty</groupId> <artifactId>jetty-servlet</artifactId> 
+			<version>${jetty.version}</version> </dependency> <dependency> <groupId>org.eclipse.jetty</groupId> 
+			<artifactId>apache-jstl</artifactId> <version>${jetty.version}</version> 
+			</dependency> <dependency> <groupId>org.eclipse.jetty</groupId> <artifactId>apache-jsp</artifactId> 
+			<version>${jetty.version}</version> </dependency> -->
+
 		<dependency>
 			<groupId>cglib</groupId>
 			<artifactId>cglib</artifactId>
@@ -116,7 +95,7 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>io.netty</groupId>
 			<artifactId>netty-all</artifactId>
@@ -161,9 +140,9 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
-		<finalName>dconfig</finalName>
+		<finalName>dconfweb</finalName>
 		<plugins>
 			<!-- Facilitates downloading source and javadoc in Eclipse -->
 			<plugin>
@@ -206,5 +185,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
+
 </project>
