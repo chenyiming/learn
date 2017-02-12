@@ -18,7 +18,7 @@ public class Test {
 	 * @throws ConfigurationException
 	 */
 	public static void main(String[] args) throws Exception {
-		PropertiesConfiguration config = new PropertiesConfiguration("127.0.0.1", 8283, "01", "development", "cmdb");
+		PropertiesConfiguration config = new PropertiesConfiguration("192.168.1.108", 8283, "01", "development", "cmdb");
 		config.addConfigurationListener(new ConfigurationListenerTest());
 		System.out.println(config.getString("jdbc.url"));
 		

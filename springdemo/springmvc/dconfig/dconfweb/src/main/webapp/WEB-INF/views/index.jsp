@@ -58,7 +58,7 @@
     	totalPages: <c:out value="${totalPages}"/>,
         currentPage: <c:out value="${currentPage}"/>,
         pageUrl: function(type, page, current){
-            return "/dconfig/index?page="+page;
+            return "/dconfweb/index?page="+page;
         }
     }
     $('#paginator').bootstrapPaginator(options);

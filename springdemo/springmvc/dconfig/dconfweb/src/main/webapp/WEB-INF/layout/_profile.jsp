@@ -49,7 +49,7 @@
     	<div class="navbar navbar-inverse navbar-fixed-top">
       		<div class="navbar-inner">
         		<div class="container">
-          			<a class="brand" href="/dconfig/index">政务云-分布式配置管理服务器</a>
+          			<a class="brand" href="/dconfweb/index">政务云-分布式配置管理服务器</a>
           			<div class="pull-right">
           				<p class="navbar-text">
           					欢迎：<c:out value="${sessionScope.sessionUser.userName}"></c:out>&nbsp;&nbsp;&nbsp;
@@ -85,7 +85,7 @@
     	totalPages: <c:out value="${totalPages}"/>,
         currentPage: <c:out value="${currentPage}"/>,
         pageUrl: function(type, page, current){
-            return "/dconfig/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>?page="+page;
+            return "/dconfweb/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>?page="+page;
         }
     }
     $('#paginator').bootstrapPaginator(options);

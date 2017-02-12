@@ -1,7 +1,7 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<a class="brand" href="/dconfig/index">首页</a> >> <b><c:out value="${project.PROJ_NAME}"/> - <c:out value="${type}"/></b> <br/><br/>
+<a class="brand" href="/dconfweb/index">首页</a> >> <b><c:out value="${project.PROJ_NAME}"/> - <c:out value="${type}"/></b> <br/><br/>
 
 <b>模块：</b>
 <select id="sel-queryModule">
@@ -26,7 +26,7 @@
   			<div class="control-group">
   				<label class="control-label">模块：</label>
     			<div class="controls">
-    				<select class="input-xxlarge" id="config-moduleId" disabled="disabled">
+    				<select class="input-xxlarge" name="moduleId" id="config-moduleId" disabled="disabled">
 						<option value="">请选择...</option>
 						<c:forEach items="${modules}" var="module">
 							<option value='<c:out value="${module.MODULE_ID}"/>'><c:out value="${module.MODULE_NAME}"/></option>
@@ -37,7 +37,7 @@
     			<div class="controls">
     				<input type="hidden" name="configKey" id="config-configKey-ext" />
     				<input type="hidden" name="moduleId" id="config-moduleId-ext"/>
-    				
+    			
     				<input type="hidden" name="configId" id="config-configId" />
     				<input type="hidden" name="projectId" value='<c:out value="${projectId}"/>'/>
     				<input type="hidden" name="type" value='<c:out value="${type}"/>'/>
@@ -84,9 +84,9 @@
                	<td value='<c:out value="${config.CONFIG_KEY}"/>'>
                		<c:out value="${config.CONFIG_KEY}"/>
                	</td>
-               	<td title='<c:out value="${config.BUILD_VALUE}"/>' >
+               	<td title='<c:out value="${config.TEST_VALUE}"/>' >
                   	<script type="text/javascript">
-                  		var value = '<c:out value="${config.BUILD_VALUE}"/>';
+                  		var value = '<c:out value="${config.TEST_VALUE}"/>';
                   		if(value.length > 30)
                   			document.write(value.substring(0, 30) + "...");
                   		else
@@ -103,10 +103,10 @@
                   	</script>
                	</td>
                	<td>
-                  	<c:out value="${config.BUILD_USER}"/>
+                  	<c:out value="${config.TEST_USER}"/>
                	</td>
                	<td>
-                  	<c:out value="${config.BUILD_TIME}"/>
+                  	<c:out value="${config.TEST_TIME}"/>
                	</td>
                	<td>
                   	<a href='javascript:updateConfig(<c:out value="${config.CONFIG_ID}"/>)' title="更新"><i class="icon-edit"></i></a>
@@ -135,12 +135,12 @@ $(document).ready(function () {
 	$("#sel-queryModule").val(<c:out value="${moduleId}"/>);
 	
 	$("#preview").click(function(e) {
-		window.location.href = '/superdiamond/profile/preview/<c:out value="${project.PROJ_CODE}"/>/<c:out value="${type}"/>?projectId=<c:out value="${projectId}"/>';
+		window.location.href = '/dconfweb/profile/preview/<c:out value="${project.PROJ_CODE}"/>/<c:out value="${type}"/>?projectId=<c:out value="${projectId}"/>';
 	});
 	
 	$("#sel-queryModule").change(function(e) {
 		var moduleId = $("#sel-queryModule").val();
-		var url = '/superdiamond/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>';
+		var url = '/dconfweb/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>';
 		if(moduleId)
 			url = url + "?moduleId=" + moduleId;
 		
@@ -149,7 +149,7 @@ $(document).ready(function () {
 	
 	$("#queryModule").click(function(e) {
 		var moduleId = $("#sel-queryModule").val();
-		var url = '/superdiamond/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>';
+		var url = '/dconfweb/profile/<c:out value="${type}"/>/<c:out value="${projectId}"/>';
 		if(moduleId)
 			url = url + "?moduleId=" + moduleId;
 		

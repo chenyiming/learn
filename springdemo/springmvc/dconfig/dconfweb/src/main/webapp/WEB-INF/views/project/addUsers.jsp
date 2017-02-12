@@ -119,7 +119,7 @@
     	totalPages: <c:out value="${totalPages}"/>,
         currentPage: <c:out value="${currentPage}"/>,
         pageUrl: function(type, page, current){
-            return "/superdiamond/project/addUsers?id=<c:out value="${project.ID}" />&page="+page;
+            return "/dconfweb/project/addUsers?id=<c:out value="${project.ID}" />&page="+page;
         }
     }
     $('#paginator').bootstrapPaginator(options);

@@ -62,7 +62,7 @@ $(document).ready(function () {
     	totalPages: <c:out value="${totalPages}"/>,
         currentPage: <c:out value="${currentPage}"/>,
         pageUrl: function(type, page, current){
-            return "/superdiamond/user/index?page="+page;
+            return "/dconfweb/user/index?page="+page;
         }
     }
     $('#paginator').bootstrapPaginator(options);

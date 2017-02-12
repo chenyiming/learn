@@ -55,8 +55,8 @@ public class DiamondServerHandler extends SimpleChannelInboundHandler<String> {
 	@Override
     public void channelRead0(ChannelHandlerContext ctx, String request) throws Exception {
     	String config;
-        if (request != null && request.startsWith("superdiamond=")) {
-        	request = request.substring("superdiamond=".length());
+        if (request != null && request.startsWith("dconfig=")) {
+        	request = request.substring("dconfig=".length());
         	
         	Map<String, String> params = (Map<String, String>) JSONUtils.parse(request);
         	String projCode = params.get("projCode");
