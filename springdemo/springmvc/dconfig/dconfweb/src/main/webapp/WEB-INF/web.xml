@@ -9,7 +9,7 @@
 	</context-param>
 	<context-param>
 		<param-name>contextInitializerClasses</param-name>
-		<param-value>com.github.diamond.support.ProfileApplicationContextInitializer</param-value>
+		<param-value>com.future.dconf.support.ProfileApplicationContextInitializer</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -17,7 +17,7 @@
 
 	<filter>
 		<filter-name>authorizationFilter</filter-name>
-		<filter-class>com.github.diamond.support.AuthorizationFilter</filter-class>
+		<filter-class>com.future.dconf.support.AuthorizationFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>authorizationFilter</filter-name>
@@ -110,7 +110,7 @@
 	
 	<!-- <servlet>
 		<servlet-name>PrintProjectVersionServlet</servlet-name>
-		<servlet-class>com.github.diamond.support.PrintProjectVersionServlet</servlet-class>
+		<servlet-class>com.future.dconf.support.PrintProjectVersionServlet</servlet-class>
 		<load-on-startup>999</load-on-startup>
 	</servlet>  -->
 
