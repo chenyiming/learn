@@ -22,18 +22,15 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
-			<version>3.1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet.jsp</groupId>
 			<artifactId>javax.servlet.jsp-api</artifactId>
 			<scope>provided</scope>
-			<version>2.2.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
 		</dependency>
 		<!-- <dependency> <groupId>org.eclipse.jetty</groupId> <artifactId>jetty-annotations</artifactId> 
 			<version>${jetty.version}</version> </dependency> <dependency> <groupId>org.eclipse.jetty</groupId> 
@@ -142,7 +139,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>dconfweb</finalName>
+		<finalName>dconf</finalName>
 		<plugins>
 			<!-- Facilitates downloading source and javadoc in Eclipse -->
 			<plugin>

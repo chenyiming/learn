@@ -1,9 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-		<groupId>future</groupId>
-	<artifactId>dconf</artifactId>
+	<parent>
+		<artifactId>itsm</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<groupId>future</groupId>
+	</parent>
+	<artifactId>dconf</artifactId>
+	<modelVersion>4.0.0</modelVersion>
 	<packaging>pom</packaging>
 	<modules>
 		<module>dconf-client</module>
@@ -17,23 +20,10 @@
    		<maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss</maven.build.timestamp.format>
 
 		<cglib.version>3.1</cglib.version>
-		<aspectj.version>1.7.2</aspectj.version>
-		<spring.version>3.2.12.RELEASE</spring.version>
-
-		<oracle.version>10.2.0.1.0</oracle.version>
-		<mysql.version>5.1.31</mysql.version>
-		<druid.version>1.0.7</druid.version>
-
-		<logback.version>1.1.2</logback.version>
-		<org.slf4j.version>1.7.7</org.slf4j.version>
-
-		<netty.verison>4.0.24.Final</netty.verison>
-		<commons-lang.version>2.6</commons-lang.version>
-		<commons-io.version>2.3</commons-io.version>
-		<commons-configuration.version>1.10</commons-configuration.version>
-
-		<junit.version>4.11</junit.version>
-		<jetty.version>9.2.2.v20140723</jetty.version>
+		
+				<druid.version>1.0.7</druid.version>
+		
+		
 	</properties>
 
 	<dependencyManagement>
@@ -42,8 +32,12 @@
 				<groupId>cglib</groupId>
 				<artifactId>cglib</artifactId>
 				<version>${cglib.version}</version>
+			</dependency><dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
 			</dependency>
-			<dependency>
+			<!-- <dependency>
 				<groupId>org.aspectj</groupId>
 				<artifactId>aspectjweaver</artifactId>
 				<version>${aspectj.version}</version>
@@ -90,11 +84,7 @@
 				<artifactId>mysql-connector-java</artifactId>
 				<version>${mysql.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>com.alibaba</groupId>
-				<artifactId>druid</artifactId>
-				<version>${druid.version}</version>
-			</dependency>
+			
 			
 			<dependency>
 				<groupId>io.netty</groupId>
@@ -102,7 +92,7 @@
 				<version>${netty.verison}</version>
 			</dependency>
 
-			<!-- slf4j -->
+			slf4j
 			<dependency>
 				<groupId>ch.qos.logback</groupId>
 				<artifactId>logback-classic</artifactId>
@@ -145,7 +135,7 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 				<scope>test</scope>
-			</dependency>
+			</dependency> -->
 		</dependencies>
 	</dependencyManagement>
 
@@ -185,4 +175,5 @@
 			</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
 </project>
