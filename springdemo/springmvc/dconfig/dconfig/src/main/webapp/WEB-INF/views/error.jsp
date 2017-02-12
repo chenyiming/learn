@@ -4,7 +4,7 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
-    	<title>SuperDiamond 配置管理服务器</title>
+    	<title>政务云-分布式配置管理服务器</title>
     	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<link href='<c:url value="/resources/css/bootstrap/css/bootstrap.min.css" />' rel="stylesheet">
     	<script type="text/javascript" src='<c:url value="/resources/js/jquery.min.js" />'></script>
@@ -46,7 +46,7 @@
     	<div class="navbar navbar-inverse navbar-fixed-top">
       		<div class="navbar-inner">
         		<div class="container">
-          			<a class="brand" href="/dconfig/index">SuperDiamond 配置管理服务器</a>
+          			<a class="brand" href="/dconfig/index">政务云-分布式配置管理服务器</a>
           			<c:if test="${sessionScope.sessionUser != null}">
 	          			<div class="pull-right">
 	          				<p class="navbar-text">

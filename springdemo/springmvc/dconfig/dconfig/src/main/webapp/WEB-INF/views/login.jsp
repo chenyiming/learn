@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SuperDiamond 配置管理服务器</title>
+    <title>政务云-分布式配置管理服务器</title>
     <link href='<c:url value="/resources/css/bootstrap/css/bootstrap.min.css" />' rel="stylesheet" >
     <style type="text/css">
       /* Override some defaults */
