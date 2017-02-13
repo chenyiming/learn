@@ -27,7 +27,7 @@ super-diamond-server 安装
 insert into conf_user(id,USER_code,USER_NAME,PASSWORD,CREATE_TIME) values(1,'admin','admin','670b14728ad9902aecba32e22fa4f6bd',current_timestamp() );  
 commit;  
 6. 访问super-diamond-server，jetty默认端口为8090，可以在：conf/META-INF/res/jetty.properties中修改。
-	http://localhost:8090/superdiamond
+	http://localhost:8080/dconfweb
 
 super-diamond-client
 --------------------
