@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.web.controller;
 
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
  * Create on @2013-8-28 @下午8:37:39 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 abstract public class BaseController {
 	protected static final Logger logger = LoggerFactory.getLogger(BaseController.class);

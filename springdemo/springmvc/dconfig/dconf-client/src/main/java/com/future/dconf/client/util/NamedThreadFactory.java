@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */
 package com.future.dconf.client.util;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Create on @2013-8-24 @下午9:55:54
  * 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 public class NamedThreadFactory implements ThreadFactory {
 	private static final AtomicInteger POOL_SEQ = new AtomicInteger(1);

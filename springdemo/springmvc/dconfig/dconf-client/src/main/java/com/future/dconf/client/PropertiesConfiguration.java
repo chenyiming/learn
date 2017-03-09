@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */
 package com.future.dconf.client;
 
@@ -35,7 +35,7 @@ import com.future.dconf.client.util.NamedThreadFactory;
 /**
  * Create on @2013-8-25 @下午1:17:38
  * 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 public class PropertiesConfiguration extends EventSource {
 	

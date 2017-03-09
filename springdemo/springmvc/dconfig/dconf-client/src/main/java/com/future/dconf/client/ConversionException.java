@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */
 package com.future.dconf.client;
 
@@ -7,7 +7,7 @@ package com.future.dconf.client;
 /**
  * Create on @2013-9-1 @下午9:22:13
  * 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 public class ConversionException extends ConfigurationRuntimeException {
 

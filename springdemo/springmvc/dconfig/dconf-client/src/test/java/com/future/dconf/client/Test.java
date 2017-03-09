@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.
+ * Copyright (c) 2013 by chenyiming.
  *
  * Test.java Create on 2013-7-11 下午4:48:04
  */
@@ -10,7 +10,7 @@ import com.future.dconf.client.PropertiesConfiguration;
 
 /**
  *
- * @author <a href="mailto:bsli@ustcinfo.com">li.binsong</a>
+ * @author <a href="mailto:">li.binsong</a>
  *
  */
 public class Test {

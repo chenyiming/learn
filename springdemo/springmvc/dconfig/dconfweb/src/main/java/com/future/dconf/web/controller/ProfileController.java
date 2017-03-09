@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.web.controller;
 
@@ -17,7 +17,7 @@ import com.future.dconf.web.service.ProjectService;
 
 /**
  * Create on @2013-8-21 @下午6:55:09 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 @Controller
 public class ProfileController extends BaseController {

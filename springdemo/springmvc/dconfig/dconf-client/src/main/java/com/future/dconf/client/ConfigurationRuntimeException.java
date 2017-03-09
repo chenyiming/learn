@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */
 package com.future.dconf.client;
 
@@ -8,7 +8,7 @@ import org.apache.commons.lang.exception.NestableRuntimeException;
 /**
  * Create on @2013-9-1 @下午9:21:17
  * 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 public class ConfigurationRuntimeException extends NestableRuntimeException {
 	private static final long serialVersionUID = -7838702245512140996L;

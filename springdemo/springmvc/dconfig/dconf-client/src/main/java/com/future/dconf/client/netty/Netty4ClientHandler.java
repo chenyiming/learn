@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.client.netty;
 
@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Create on @2013-8-24 @下午10:31:29 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 @Sharable
 public class Netty4ClientHandler extends SimpleChannelInboundHandler<String> {

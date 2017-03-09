@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.web.controller;
 
@@ -14,7 +14,7 @@ import com.future.dconf.web.service.ModuleService;
 
 /**
  * Create on @2013-8-22 @下午5:25:00 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 @Controller
 public class ModuleController extends BaseController {

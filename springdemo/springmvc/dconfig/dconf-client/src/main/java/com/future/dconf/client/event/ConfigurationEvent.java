@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.client.event;
 
@@ -7,7 +7,7 @@ import java.util.EventObject;
 
 /**
  * Create on @2013-8-28 @下午9:12:44 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 public class ConfigurationEvent extends EventObject {
 	private static final long serialVersionUID = 3277238219073504136L;

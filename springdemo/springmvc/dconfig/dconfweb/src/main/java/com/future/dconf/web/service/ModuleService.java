@@ -1,5 +1,5 @@
 /**        
- * Copyright (c) 2013 by 苏州科大国创信息技术有限公司.    
+ * Copyright (c) 2013 by chenyiming.    
  */    
 package com.future.dconf.web.service;
 
@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Create on @2013-8-21 @下午8:18:44 
- * @author bsli@ustcinfo.com
+ * @author 
  */
 @Service
 public class ModuleService {
