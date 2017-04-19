@@ -122,15 +122,44 @@
 			<url>http://192.168.13.53:8181/nexus/content/repositories/snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+	<build>
+		<plugins>
+
+
+
+			
+			<!-- Plugin to run and test through maven -->
+		<!-- 	<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>maven-jetty-plugin</artifactId>
+				<version>6.1.25</version>
+				<configuration>
+					<scanIntervalSeconds>3</scanIntervalSeconds>
+				</configuration>
+			</plugin> -->
+			<!-- Ensures we are compiling at 1.6 level -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
 	
+		</plugins>
+	</build>
 	<modules>
-		<module>test</module>
-		<module>web</module>
+		
 		<module>dao</module>
 		<module>redis</module>
 		<module>spider</module>
 		<module>shirecas</module>
 		<module>elasticsearch</module>
 		<module>dconfig</module>
+		<module>mybatis</module>
+		<module>web</module>
+		
 	</modules>
 </project>

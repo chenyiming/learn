@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.dao.ServerMapper">
+  <resultMap id="BaseResultMap" type="com.mybatis.model.Server">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="osfamily_id" jdbcType="INTEGER" property="osfamilyId" />
+    <result column="osversion_id" jdbcType="INTEGER" property="osversionId" />
+    <result column="oslicence_id" jdbcType="INTEGER" property="oslicenceId" />
+    <result column="cpu" jdbcType="VARCHAR" property="cpu" />
+    <result column="ram" jdbcType="VARCHAR" property="ram" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, osfamily_id, osversion_id, oslicence_id, cpu, ram
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from server
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+</mapper>

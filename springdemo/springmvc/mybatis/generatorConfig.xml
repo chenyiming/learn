@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<!-- 数据库驱动包位置 -->
+	<classPathEntry
+		location="/Users/chenke/.m2/repository/mysql/mysql-connector-java/5.1.39/mysql-connector-java-5.1.39.jar" />
+	<context id="context1">
+		<commentGenerator>
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+		<jdbcConnection connectionURL="jdbc:mysql://localhost/itop"
+			driverClass="com.mysql.jdbc.Driver" password="11111111" userId="root" />
+		<javaModelGenerator targetPackage="com.mybatis.model"
+			targetProject="src/main/java" />
+		<sqlMapGenerator targetPackage="mapping"
+			targetProject="src/main/resources" />
+		<javaClientGenerator targetPackage="com.mybatis.dao"
+			targetProject="src/main/java" type="XMLMAPPER" />
+		
+		<table tableName="server" 
+		enableInsert="false"  enableDeleteByPrimaryKey="false"
+		enableUpdateByPrimaryKey="false"  
+		enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false"
+		></table>
+
+		<table tableName="view_server" 
+		enableCountByExample="true" 
+		 selectByPrimaryKeyQueryId="id" enableSelectByPrimaryKey="true"
+		 selectByExampleQueryId="id"	enableSelectByExample="true" 
+			enableInsert="false"  enableDeleteByPrimaryKey="false"
+			enableUpdateByPrimaryKey="false" 
+			enableUpdateByExample="false" enableDeleteByExample="false"
+		></table>
+		<!--table schema="itop" tableName="view_server" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			    <generatedKey column="id" sqlStatement="Mysql"/>
+
+		</table-->
+	</context>
+</generatorConfiguration>

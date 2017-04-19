@@ -27,7 +27,7 @@ public class PersonRest {
 	@Autowired
 	private IPersonDao personDao;
 	
-	@Autowired
+	//@Autowired
 	private SpiderService spider;
 
 	/*

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mybatis.dao.ViewServerMapper">
+  <resultMap id="BaseResultMap" type="com.mybatis.model.ViewServer">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="org_id" jdbcType="INTEGER" property="orgId" />
+    <result column="organization_name" jdbcType="VARCHAR" property="organizationName" />
+    <result column="business_criticity" jdbcType="CHAR" property="businessCriticity" />
+    <result column="move2production" jdbcType="DATE" property="move2production" />
+    <result column="serialnumber" jdbcType="VARCHAR" property="serialnumber" />
+    <result column="location_id" jdbcType="INTEGER" property="locationId" />
+    <result column="location_name" jdbcType="VARCHAR" property="locationName" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="brand_id" jdbcType="INTEGER" property="brandId" />
+    <result column="brand_name" jdbcType="VARCHAR" property="brandName" />
+    <result column="model_id" jdbcType="INTEGER" property="modelId" />
+    <result column="model_name" jdbcType="VARCHAR" property="modelName" />
+    <result column="asset_number" jdbcType="VARCHAR" property="assetNumber" />
+    <result column="purchase_date" jdbcType="DATE" property="purchaseDate" />
+    <result column="end_of_warranty" jdbcType="DATE" property="endOfWarranty" />
+    <result column="rack_id" jdbcType="INTEGER" property="rackId" />
+    <result column="rack_name" jdbcType="VARCHAR" property="rackName" />
+    <result column="enclosure_id" jdbcType="INTEGER" property="enclosureId" />
+    <result column="enclosure_name" jdbcType="VARCHAR" property="enclosureName" />
+    <result column="nb_u" jdbcType="INTEGER" property="nbU" />
+    <result column="managementip" jdbcType="VARCHAR" property="managementip" />
+    <result column="powerA_id" jdbcType="INTEGER" property="poweraId" />
+    <result column="powerA_name" jdbcType="VARCHAR" property="poweraName" />
+    <result column="powerB_id" jdbcType="INTEGER" property="powerbId" />
+    <result column="powerB_name" jdbcType="VARCHAR" property="powerbName" />
+    <result column="redundancy" jdbcType="VARCHAR" property="redundancy" />
+    <result column="osfamily_id" jdbcType="INTEGER" property="osfamilyId" />
+    <result column="osfamily_name" jdbcType="VARCHAR" property="osfamilyName" />
+    <result column="osversion_id" jdbcType="INTEGER" property="osversionId" />
+    <result column="osversion_name" jdbcType="VARCHAR" property="osversionName" />
+    <result column="oslicence_id" jdbcType="INTEGER" property="oslicenceId" />
+    <result column="oslicence_name" jdbcType="VARCHAR" property="oslicenceName" />
+    <result column="cpu" jdbcType="VARCHAR" property="cpu" />
+    <result column="ram" jdbcType="VARCHAR" property="ram" />
+    <result column="finalclass" jdbcType="VARCHAR" property="finalclass" />
+    <result column="friendlyname" jdbcType="VARCHAR" property="friendlyname" />
+    <result column="org_id_friendlyname" jdbcType="VARCHAR" property="orgIdFriendlyname" />
+    <result column="location_id_friendlyname" jdbcType="VARCHAR" property="locationIdFriendlyname" />
+    <result column="brand_id_friendlyname" jdbcType="VARCHAR" property="brandIdFriendlyname" />
+    <result column="model_id_friendlyname" jdbcType="VARCHAR" property="modelIdFriendlyname" />
+    <result column="rack_id_friendlyname" jdbcType="VARCHAR" property="rackIdFriendlyname" />
+    <result column="enclosure_id_friendlyname" jdbcType="VARCHAR" property="enclosureIdFriendlyname" />
+    <result column="powerA_id_friendlyname" jdbcType="VARCHAR" property="poweraIdFriendlyname" />
+    <result column="powerA_id_finalclass_recall" jdbcType="VARCHAR" property="poweraIdFinalclassRecall" />
+    <result column="powerB_id_friendlyname" jdbcType="VARCHAR" property="powerbIdFriendlyname" />
+    <result column="powerB_id_finalclass_recall" jdbcType="VARCHAR" property="powerbIdFinalclassRecall" />
+    <result column="osfamily_id_friendlyname" jdbcType="VARCHAR" property="osfamilyIdFriendlyname" />
+    <result column="osversion_id_friendlyname" jdbcType="VARCHAR" property="osversionIdFriendlyname" />
+    <result column="oslicence_id_friendlyname" jdbcType="VARCHAR" property="oslicenceIdFriendlyname" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.mybatis.model.ViewServer">
+    <result column="description" jdbcType="LONGVARCHAR" property="description" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, name, org_id, organization_name, business_criticity, move2production, serialnumber, 
+    location_id, location_name, status, brand_id, brand_name, model_id, model_name, asset_number, 
+    purchase_date, end_of_warranty, rack_id, rack_name, enclosure_id, enclosure_name, 
+    nb_u, managementip, powerA_id, powerA_name, powerB_id, powerB_name, redundancy, osfamily_id, 
+    osfamily_name, osversion_id, osversion_name, oslicence_id, oslicence_name, cpu, ram, 
+    finalclass, friendlyname, org_id_friendlyname, location_id_friendlyname, brand_id_friendlyname, 
+    model_id_friendlyname, rack_id_friendlyname, enclosure_id_friendlyname, powerA_id_friendlyname, 
+    powerA_id_finalclass_recall, powerB_id_friendlyname, powerB_id_finalclass_recall, 
+    osfamily_id_friendlyname, osversion_id_friendlyname, oslicence_id_friendlyname
+  </sql>
+  <sql id="Blob_Column_List">
+    description
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.mybatis.model.ViewServerExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'id' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from view_server
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.mybatis.model.ViewServerExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'id' as QUERYID,
+    <include refid="Base_Column_List" />
+    from view_server
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="countByExample" parameterType="com.mybatis.model.ViewServerExample" resultType="java.lang.Long">
+    select count(*) from view_server
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+</mapper>
