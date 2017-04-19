@@ -13,14 +13,17 @@
   	<!-- 
 	本地身份验证使用	classpath:spring/spring-shiro-web.xml,
 	cas身份验证使用 	classpath:spring/spring-shiro-cas.xml,
+	
+	
+	,
+ 			classpath:spring/spider-context.xml,
+ 			classpath:spring/dubbo-provider.xml
 	 -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
           	classpath:spring/root-context.xml,
-			classpath:spring/spring-shiro-web.xml,
- 			classpath:spring/spider-context.xml,
- 			classpath:spring/dubbo-provider.xml
+			classpath:spring/spring-shiro-web.xml
         </param-value>
     </context-param>
 
@@ -42,7 +45,8 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-			classpath:spring/mvc/servlet-context.xml
+			classpath:spring/mvc/servlet-context.xml,
+			classpath:spring/mvc/servlet-thymeleaf.xml		
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
@@ -85,7 +89,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/dddd*</url-pattern>
 	</filter-mapping>
 
 	<filter>

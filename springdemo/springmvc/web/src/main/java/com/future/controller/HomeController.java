@@ -32,5 +32,40 @@ public class HomeController {
 		return "home";
 	}
 	
+	/**
+	 * Selects the home page and populates the model with a message
+	 */
+	@RequestMapping(value = "/p1", method = RequestMethod.GET)
+	public String home2(Model model) {
+		logger.info("Welcome home!");
+		model.addAttribute("controllerMessage",
+				"This is the message from the controller!");
+		return "jsp/home";
+	}
+	
+	/**
+	 * Selects the home page and populates the model with a message
+	 */
+	@RequestMapping(value = "/p2", method = RequestMethod.GET)
+	public String home3(Model model) {
+		logger.info("Welcome home!");
+		model.addAttribute("controllerMessage",
+				"This is the message from the controller!");
+		return "thy/test";
+	}
+	
+	
+	/**
+	 * Selects the home page and populates the model with a message
+	 */
+	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	public String test(Model model) {
+		logger.info("Welcome home!");
+		System.out.println("test.html");
+		model.addAttribute("controllerMessage",
+				"This is the message from the controller!");
+		return "test";
+	}
+	
 
 }
